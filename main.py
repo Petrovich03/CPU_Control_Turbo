@@ -22,7 +22,7 @@ class MainWindow(QMainWindow):
         self.ui.done.clicked.connect(self.clock)
 
     def clock(self):
-        print("Управление максимальной частотой процесса разблокировано.")
+        print("Управление максимальной частотой процессора разблокировано.")
         registry_key_path = r"SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\75b0ae3f-bce0-45a7-8c89-c9611c25e100"
         key = winreg.OpenKey(winreg.HKEY_LOCAL_MACHINE, registry_key_path, 0, winreg.KEY_SET_VALUE)
         winreg.SetValueEx(key, "Attributes", 0, winreg.REG_DWORD, 2)
